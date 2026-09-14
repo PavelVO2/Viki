@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Павел Козлов — Википедия</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #202122;
+    --ink-dim: #54595d;
+    --line: #a2a9b1;
+    --line-light: #eaecf0;
+    --box-bg: #f8f9fa;
+    --box-header: #cedff2;
+    --link: #0645ad;
+    --quote-bg: #fef9e0;
+    --quote-border: #d4af37;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+  }
+
+  /* ---------- TITLE ---------- */
+  .page-title {
+    font-size: 2.1rem;
+    font-weight: 400;
+    border-bottom: 3px solid var(--line);
+    padding-bottom: 8px;
+    margin: 0 0 6px;
+  }
+
+  .short-desc {
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 0.95rem;
+    margin: 0 0 20px;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .article-layout {
+    display: flow-root;
+  }
+
+  /* ---------- INFOBOX ---------- */
+  .infobox {
+    float: right;
+    width: 280px;
+    margin: 0 0 20px 24px;
+    background: var(--box-bg);
+    border: 1px solid var(--line);
+    font-size: 0.85rem;
+  }
+
+  .infobox-title {
+    background: var(--box-header);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 8px 6px;
+    font-family: Georgia, serif;
+  }
+
+  .infobox img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    background: var(--box-bg);
+  }
+
+  .infobox-caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .infobox-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .infobox-table th, .infobox-table td {
+    padding: 6px 8px;
+    vertical-align: top;
+    text-align: left;
+    border-top: 1px solid var(--line-light);
+  }
+
+  .infobox-table th {
+    width: 38%;
+    color: var(--ink-dim);
+    font-weight: 400;
+  }
+
+  /* ---------- ARTICLE ---------- */
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+    margin: 34px 0 16px;
+  }
+
+  h3 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 24px 0 10px;
+  }
+
+  p { margin: 0 0 16px; }
+
+  strong { font-weight: 700; }
+
+  .wl {
+    color: var(--link);
+    text-decoration: none;
+  }
+
+  a.wl:hover {
+    text-decoration: underline;
+  }
+
+  sup.ref a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 0.78em;
+  }
+
+  sup.ref a:hover { text-decoration: underline; }
+
+  .pull-quote {
+    margin: 28px 0;
+    padding: 18px 22px;
+    background: var(--quote-bg);
+    border-left: 4px solid var(--quote-border);
+    font-style: italic;
+    font-size: 1.05rem;
+  }
+
+  ul { margin: 0 0 18px; padding-left: 26px; }
+  li { margin-bottom: 8px; }
+
+  .family-figure {
+    float: right;
+    width: 240px;
+    margin: 0 0 16px 20px;
+    background: var(--box-bg);
+    border: 1px solid var(--line);
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+
+  .family-figure img {
+    display: block;
+    width: 100%;
+  }
+
+  .family-figure figcaption {
+    padding: 6px 4px 2px;
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 0.78rem;
+  }
+
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0 8px;
+  }
+
+  .bio-grid figure {
+    margin: 0;
+    background: var(--box-bg);
+    border: 1px solid var(--line);
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+
+  .bio-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .bio-grid figcaption {
+    padding: 6px 4px 2px;
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 0.78rem;
+  }
+
+  @media (max-width: 640px) {
+    .family-figure { float: none; width: 100%; margin: 0 0 16px; }
+    .bio-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- NOTES ---------- */
+  .notes {
+    clear: both;
+    margin-top: 40px;
+  }
+
+  .notes ol {
+    font-size: 0.88rem;
+    color: var(--ink-dim);
+    padding-left: 22px;
+  }
+
+  .notes li {
+    margin-bottom: 6px;
+  }
+
+  .notes a.backlink {
+    color: var(--link);
+    text-decoration: none;
+    margin-right: 4px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    clear: both;
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 0.75rem;
+    color: var(--ink-dim);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 640px) {
+    .infobox { float: none; width: 100%; margin: 0 0 24px; }
+    .page-title { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <h1 class="page-title">Павел Козлов</h1>
+    <p class="short-desc">Павел Козлов — относительно разумный представитель вида «Homo sapiens»<sup class="ref"><a href="#note1">[1]</a></sup>, сочетающий продуктивность с прокрастинацией<sup class="ref"><a href="#note3">[3]</a></sup>. Проживает в Минске, где активно борется с бытовыми задачами.</p>
+
+    <div class="article-layout">
+
+      <aside class="infobox">
+        <div class="infobox-title">Павел Козлов</div>
+        <img src="images/o2max-main.jpg" alt="Павел Козлов">
+        <table class="infobox-table">
+          <tr><th>Псевдоним</th><td><span class="wl">Паша Биатлон</span> (официально в Get Contact)<sup class="ref"><a href="#note4">[4]</a></sup></td></tr>
+          <tr><th>Место жительства</th><td>Минск, Беларусь</td></tr>
+          <tr><th>Опыт</th><td>10-й год в федерации биатлона (без лыж)</td></tr>
+          <tr><th>Спорт</th><td>Профессиональное плавание</td></tr>
+          <tr><th>Проект</th><td>Центр тестирования <a class="wl" href="https://www.instagram.com/o2max.by/" target="_blank" rel="noopener">O2MAX</a> (газоанализатор + лактат)</td></tr>
+          <tr><th>Питомец</th><td>Ши-тцу Лёва (трусливый, но царский)</td></tr>
+        </table>
+      </aside>
+
+      <article>
+
+        <section id="about">
+          <p>Имя — <strong>Павел Козлов</strong>. Для друзей — просто Паша. А для большинства знакомых в <span class="wl">Get Contact</span> — <span class="wl">Паша Биатлон</span><sup class="ref"><a href="#note4">[4]</a></sup>.</p>
+
+          <p>И да, это не опечатка. Я уже десятый год работаю в <span class="wl">федерации биатлона</span> с олимпийскими чемпионами. Хотя, по иронии судьбы, на лыжах стоять не умею. Но, как показала практика, для управления процессами в спорте высших достижений это не обязательно. Главное — правильно выстроить систему.</p>
+
+          <div class="bio-grid">
+            <figure>
+              <img src="images/biathlon-1.jpg" alt="Павел Козлов на этапе Кубка мира по биатлону в Контиолахти, Финляндия">
+              <figcaption>Этап Кубка мира по биатлону, Контиолахти (Финляндия). Форма сборной — есть, лыж поблизости — нет.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/biathlon-2.jpg" alt="Павел Козлов с олимпийскими чемпионками по биатлону, Пхёнчхан-2018">
+              <figcaption>С олимпийскими чемпионками по биатлону (Пхёнчхан, 2018) и их медалями. Лыжи, к счастью, снова не потребовались.</figcaption>
+            </figure>
+          </div>
+
+          <p>Своё первое «капиталовложение» я сделал ещё в детстве, когда променял компьютерные игры на секцию плавания. Это было рискованно, но окупилось сторицей. С тех пор я знаю: вода камень точит, а спорт — лучший инвестор в здоровье.</p>
+
+          <h2>Какой я</h2>
+          <p>Я <strong>многогранный</strong>. Не «разбрасывающийся», а именно многогранный — это разные слова, запомните. За плечами — <span class="wl">БГУИР</span>, специальность «айтишник». В те годы это звучало как анекдот: «айтишник, который не умеет кодить». Но, как показало время, я просто опередил тренды. Сегодня можно быть айтишником и не писать код — достаточно уметь объяснить нейросети, чего ты от неё хочешь.</p>
+
+          <p>При этом я человек воды: профессионально занимался <span class="wl">плаванием</span>, покорял водные дорожки. Если бы мне платили за каждый километр в бассейне, я бы уже давно вышел на пенсию. Но мне не платят, поэтому я просто называю это «инвестицией в здоровье» и продолжаю. Сейчас покоряю жизненные горизонты, веду активный образ жизни, потому что без движения — это просто застой. Каждая тренировка в моём графике — это не хобби и не рутина. Это образ жизни и моя главная инвестиция в себя.</p>
+
+          <p>Я — строитель империи. Не той, что из золота, а той, что из правильно выстроенных тренировочных процессов. Я развиваю собственный центр тестирования <a class="wl" href="https://www.instagram.com/o2max.by/" target="_blank" rel="noopener">O2MAX</a> на стыке науки, медицины и тренерского подхода. Мы не просто «даём советы» — мы фиксируем отклик организма под нагрузкой через дыхание, пульс и лактат в крови. Газоанализатор, датчики, заборы — в ход идёт всё. А цифры, как известно, не врут. В отличие от ощущений «мне кажется, я могу ещё».</p>
+
+          <p>Пока одни тренируются «на ощупь», мы превращаем спорт в точную науку. И да, я считаю это своим главным достижением.</p>
+
+          <div class="bio-grid">
+            <figure>
+              <img src="images/o2max-1.jpg" alt="Тестирование спортсмена в центре O2MAX">
+              <figcaption>Центр тестирования O2MAX: газоанализатор вместо гадания на кофейной гуще.</figcaption>
+            </figure>
+            <figure>
+              <img src="images/o2max-2.jpg" alt="Процесс тестирования в центре O2MAX">
+              <figcaption>Забор лактата в процессе — наука вместо тренировки «на ощупь».</figcaption>
+            </figure>
+          </div>
+
+          <div class="pull-quote">«Я человек, который уже десятый год работает с олимпийскими чемпионами, профессионально плавал и запустил центр тестирования для всех любителей активного образа жизни — от любителей до профессионалов. И при этом до сих пор не умею стоять на лыжах. Видимо, природа решила, что мне достаточно воды. Приятно иметь дело».</div>
+        </section>
+
+        <section id="achievements">
+          <h2>Достижения</h2>
+          <ul>
+            <li>Получил два образования<sup class="ref"><a href="#note2">[2]</a></sup>, основное — БГУИР, специальность айтишника. Знания конвертировал в практику.</li>
+            <li>Прошёл школу профессионального спорта (плавание). Выжил. Закалился.</li>
+            <li>Работаю уже десятый год в федерации биатлона с олимпийскими чемпионами. Получил прозвище «Паша Биатлон», так и не встав на лыжи.</li>
+            <li>Выстроил с нуля центр тестирования O2MAX, где наука встречается с медициной и спортом. Газоанализатор — наш лучший аудитор.</li>
+            <li>Внедрил в массы культ осознанных тренировок. Люди приходят с вопросами, уходят с пониманием своего тела.</li>
+            <li>Установил личный рекорд по совмещению учёбы, спорта и запуска собственного дела.</li>
+          </ul>
+        </section>
+
+        <section id="family">
+          <h2>Семейство и среда обитания</h2>
+
+          <figure class="family-figure">
+            <img src="images/leva.jpg" alt="Лёва, ши-тцу, сидит на траве в шлейке">
+            <figcaption>Лёва (он же Лев) в естественной среде обитания. Крайне опасен для тапок и миски с кормом. 2026 год.</figcaption>
+          </figure>
+
+          <p>В семейном кругу меня сопровождает верный спутник — <span class="wl">Лёва</span>. Официально по паспорту (и по документам питомника) он — Лев. Но в быту это просто Лёва.</p>
+
+          <p>Данный экземпляр породы ши-тцу сочетает в себе несочетаемое: царское имя, пушистую морду и абсолютно трусливый характер. Лёва боится громких звуков, незнакомцев, пылесоса и собственной тени. При этом свято уверен, что он — главный в доме (и, честно говоря, мы не спорим, потому что с ним лучше не связываться, когда он охраняет свою миску).</p>
+
+          <p>Роль в проекте: обеспечение психологической разгрузки после тренировок и сложных рабочих дней. Номинально — талисман центра тестирования. Фактически — правитель дивана.</p>
+
+          <h3>Достижения Лёвы</h3>
+          <ul>
+            <li>Успешно освоил искусство сна 20 часов в сутки (и это только официальная статистика).</li>
+            <li>Установил рекорд по скорости бегства от собственного хвоста.</li>
+            <li>Является единственным существом в доме, которое не знает, что такое дедлайн, и абсолютно счастливо.</li>
+            <li>Получил титул «Самый громкий храп на квадратный метр» (по версии соседей).</li>
+          </ul>
+        </section>
+
+        <section id="criticism">
+          <h2>Критика</h2>
+          <p>Некоторые эксперты (мама, тренер, Лёва, коллеги из биатлона) отмечают, что субъект слишком много времени проводит в разъездах и тренировках. Также критикуется за то, что иногда забывает отдыхать<sup class="ref"><a href="#note3">[3]</a></sup>. Отдельно критикуется за неумение стоять на лыжах при почти десятилетнем стаже работы в биатлоне. Сам субъект с критикой согласен, но менять ничего не планирует, потому что «отдых — это для тех, кто не умеет правильно распределять время, а лыжи — это просто полоса препятствий, которую можно обойти».</p>
+        </section>
+
+        <p><em>Эта страница — результат синергии человека и нейросети. Человек отвечал за панику, дедлайн и написание промптов. Нейросеть Claude — за генерацию кода, спасение успеваемости и молчание о том, что автор не знает HTML.</em><sup class="ref"><a href="#note5">[5]</a></sup></p>
+
+      </article>
+
+    </div>
+
+    <div class="notes">
+      <h2>Примечания</h2>
+      <ol>
+        <li id="note1"><a class="backlink" href="#">↑</a>Данные основаны на личных ощущениях автора, а не на научных исследованиях.</li>
+        <li id="note2"><a class="backlink" href="#">↑</a>Второе образование получено не потому, что первого было мало, а для общего развития — так утверждает автор.</li>
+        <li id="note3"><a class="backlink" href="#">↑</a>Уровень лени может варьироваться в зависимости от дедлайна.</li>
+        <li id="note4"><a class="backlink" href="#">↑</a>Прозвище «Паша Биатлон» официально закреплено в Get Contact. Проверка на лыжне не проводилась.</li>
+        <li id="note5"><a class="backlink" href="#">↑</a>Автор не знает HTML. Код написал Claude. Но спортсмены не сдаются, поэтому сайт всё равно работает.</li>
+      </ol>
+    </div>
+
+    <footer>
+      Фото в инфобоксе, фото Лёвы и фото из разделов «Какой я» и «Достижения» — личный архив автора страницы.
+    </footer>
+
+  </div>
+
+</body>
+</html>
